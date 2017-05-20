@@ -14,7 +14,7 @@ using PhoneBook.Models;
 
 namespace PhoneBook.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class MeController : ApiController
     {
         private ApplicationUserManager _userManager;
