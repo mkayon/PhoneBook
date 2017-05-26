@@ -1,20 +1,20 @@
-<div ng-controller="NewContactController">
+﻿<div ng-controller="EditeContactController">
     <form name="ContactForm" ng-submit="submitForm()" novalidate>
 
         <!-- FIRSTNAME -->
         <div class="form-group" ng-class="{ 'has-error' : ContactForm.firstname.$invalid && !ContactForm.firstname.$pristine }">
             <label>First Name</label>
-            <input type="text" name="firstname" class="form-control" ng-model="data.firstName" ng-minlength="3" ng-maxlength="8" required>
-            <p ng-show="ContactForm.firstname.$error.minlength" class="help-block">Firstname is too short.</p>
-            <p ng-show="ContactForm.firstname.$error.maxlength" class="help-block">Firstname is too long.</p>
+            <input type="text" name="firstname" class="form-control" ng-model="data.firstName" ng-minlength="3" ng-maxlength="70" required>
+            <p ng-show="ContactForm.firstname.$error.minlength" class="help-block">First Name is too short.</p>
+            <p ng-show="ContactForm.firstname.$error.maxlength" class="help-block">First Name is too long.</p>
         </div>
 
         <!-- LASTNAME -->
         <div class="form-group" ng-class="{ 'has-error' : ContactForm.lastname.$invalid && !ContactForm.lastname.$pristine }">
             <label>Last Name</label>
-            <input type="text" name="lastname" class="form-control" ng-model="data.lastName" ng-minlength="3" ng-maxlength="8" required>
-            <p ng-show="ContactForm.lastname.$error.minlength" class="help-block">Lastname is too short.</p>
-            <p ng-show="ContactForm.lastname.$error.maxlength" class="help-block">Lastname is too long.</p>
+            <input type="text" name="lastname" class="form-control" ng-model="data.lastName" ng-minlength="3" ng-maxlength="70" required>
+            <p ng-show="ContactForm.lastname.$error.minlength" class="help-block">Last Name is too short.</p>
+            <p ng-show="ContactForm.lastname.$error.maxlength" class="help-block">Last Name is too long.</p>
         </div>
 
         <!-- Email -->
@@ -27,16 +27,17 @@
         </div>
 
         <!-- Phones -->
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error' : ContactForm.phonenum.$invalid && !ContactForm.phonenum.$pristine }">
             <label>Phones</label>
             <table>
-                <tr ng-repeat="phoneNumber in data.phoneNumber" ng-model="data.phoneNumber">
+                <tr ng-repeat="phoneNumber in data.phoneNumber">
                     <td>{{phoneNumber.phoneNum}}</td>
                     <td><a data-ng-click="Delnum(phoneNumber.phoneNumberId)" class="glyphicon glyphicon-remove-circle"></a></td>
                 </tr>
             </table>
             <div class="input-group phone-input">
-                <input type="text" ng-model="tmpPhone" name="phonenum" class="form-control" placeholder="+1 (999) 999 9999" ng-pattern="/^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/" ng-minlength="1" ng-maxlength="15" />
+                <!-- /^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\ -->
+                <input type="tel" ng-model="tmpPhone" name="phonenum" class="form-control" placeholder="+1 (999) 999 9999" ng-pattern="/s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/" ng-minlength="1" ng-maxlength="15" />
                 <p ng-show="ContactForm.phonenum.$error.maxlength" class="help-block">Phone Number is too long.</p>
                 <p ng-show="ContactForm.phonenum.$error.pattern" class="help-block">Phone Number not valid.</p>
             </div>
@@ -46,4 +47,4 @@
             <button type="submit" class="btn btn-primary" ng-disabled="ContactForm.$invalid  ">Submit</button>
         </div>
     </form>
-        </div>
+</div>

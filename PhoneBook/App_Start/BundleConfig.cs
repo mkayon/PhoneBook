@@ -17,29 +17,15 @@ namespace PhoneBook
                 "~/Scripts/jquery.unobtrusive*",
                 "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
-                "~/Scripts/knockout-{version}.js",
-                "~/Scripts/knockout.validation.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+            //    "~/Scripts/knockout-{version}.js",
+            //    "~/Scripts/knockout.validation.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/scripts/sammy-{version}.js",
-                "~/scripts/app/common.js",
-                "~/scripts/app/app.datamodel.js",
-                "~/scripts/app/app.viewmodel.js",
-                "~/scripts/app/home.viewmodel.js",
-                "~/scripts/app/_run.js"
+          "~/Scripts/app/app.js",
+    "~/Scripts/app/app-controller.js"
                 ));
-            bundles.Add(new ScriptBundle("~/bundles/angularapp").Include(
-    //"~/Scripts/sammy-{version}.js",
-    //"~/Scripts/app/common.js",
-    //"~/Scripts/app/app.datamodel.js",
-    //"~/Scripts/app/app.viewmodel.js",
-    //"~/Scripts/app/home.viewmodel.js",
-    //"~/Scripts/app/_run.js"
-         "~/Scripts/angularApp/app.js",
-    "~/Scripts/angularApp/app-controller.js"
 
-    ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

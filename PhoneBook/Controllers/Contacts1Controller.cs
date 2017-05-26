@@ -160,7 +160,11 @@ namespace PhoneBook.Controllers
             {
                 return NotFound();
             }
+            foreach (var item in contacts.Phone_Numbers)
+            {
 
+            }
+           db.Phone_Numbers.RemoveRange(contacts.Phone_Numbers);
             db.Contacts.Remove(contacts);
             db.SaveChanges();
 

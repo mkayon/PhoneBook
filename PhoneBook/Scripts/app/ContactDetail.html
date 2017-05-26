@@ -1,0 +1,39 @@
+<br />
+<div ng-controller="ContactDetailController">
+    <form name="ContactForm" ng-submit="submitForm()" novalidate>
+
+        <!-- FIRSTNAME -->
+        <div class="form-group">
+            <label>First Name :</label>
+            <label>{{data.firstName}}</label>
+
+        </div>
+
+        <!-- LASTNAME -->
+        <div class="form-group ">
+            <label>Last Name :</label>
+            <label>{{data.lastName}}</label>
+
+        </div>
+
+        <!-- Email -->
+        <div class="form-group" ng-class="{ 'has-error' : ContactForm.lastname.$invalid && !ContactForm.lastname.$pristine }">
+            <label>Email :</label>
+            <label>{{data.email}}</label>
+        </div>
+
+        <!-- Phones -->
+        <div class="form-group">
+            <label>Phones :</label>
+            <div ng-repeat="phoneNumbe in data.phoneNumber">
+                <label>{{phoneNumbe.phoneNum}}</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" ng-click="EditeContact()" class="btn btn-primary" ng-disabled="ContactForm.$invalid">Edite Contact</button>
+        </div>
+        <div class="form-group">
+            <button type="button" ng-click="Deletecontact()" class="btn btn-primary" ng-disabled="ContactForm.$invalid">Delete Contact</button>
+        </div>
+    </form>
+</div>
