@@ -11,16 +11,13 @@ namespace PhoneBook.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Phone_Numbers
     {
         public int Phone_Number_Id { get; set; }
         public int Contact_Id { get; set; }
         public string Phone_Number { get; set; }
-        [Column(TypeName = "DateTime2")]
         public System.DateTime Create_Date { get; set; }
-        [Column(TypeName = "DateTime2")]
         public Nullable<System.DateTime> Update_Date { get; set; }
     
         public virtual Contacts Contacts { get; set; }

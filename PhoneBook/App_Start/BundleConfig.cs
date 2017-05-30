@@ -23,7 +23,9 @@ namespace PhoneBook
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
           "~/Scripts/app/app.js",
-    "~/Scripts/app/app-controller.js"
+                  "~/Scripts/app/app-directive.js",
+      "~/Scripts/app/app-controller.js"
+               
                 ));
 
 

@@ -1,5 +1,6 @@
 (function () {
     'use strict';
+    console.log("app");
     var folder_patch = "";
     var app = angular.module('app', []).
      config(['$routeProvider', function ($routeProvider) {
@@ -16,10 +17,13 @@
                  templateUrl: folder_patch + '/Scripts/app/NewContact.html',
                  controller: 'NewContactController'
              })
-                    .when('/EditeContact/:ContactId', {
-                        templateUrl: folder_patch + '/Scripts/app/EditeContact.html',
-                        controller: 'EditeContactController'
-                    })
+            .when('/EditeContact/:ContactId', {
+                templateUrl: folder_patch + '/Scripts/app/EditeContact.html',
+                controller: 'EditeContactController'
+            })
+            .when('/DeleteContact/:ContactId', {
+                controller: 'DeleteContactController'
+            })
              .otherwise({ redirectTo: '/Contacts' });
      }]);
 

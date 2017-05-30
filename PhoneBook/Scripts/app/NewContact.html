@@ -1,6 +1,6 @@
 <div ng-controller="NewContactController">
     <form name="ContactForm" ng-submit="submitForm()" novalidate>
-
+        <h2 >New Contact</h2>
         <!-- FIRSTNAME -->
         <div class="form-group" ng-class="{ 'has-error' : ContactForm.firstname.$invalid && !ContactForm.firstname.$pristine }">
             <label>First Name</label>
@@ -28,21 +28,37 @@
 
         <!-- Phones -->
         <div class="form-group" ng-class="{ 'has-error' : ContactForm.phonenum.$invalid && !ContactForm.phonenum.$pristine }">
-            <label>Phones</label>
-            <table>
-                <tr ng-repeat="phoneNumber in data.phoneNumber" ng-model="data.phoneNumber">
-                    <td>{{phoneNumber.phoneNum}}</td>
-                    <td><a data-ng-click="Delnum(phoneNumber.phoneNumberId)" class="glyphicon glyphicon-remove-circle"></a></td>
-                </tr>
-            </table>
-            <div class="input-group phone-input">
-                <input class="input-phone" type='text' phone-input ng-model="tmpPhone" />
-                <!--  <input type="text" ng-model="tmpPhone" name="phonenum" class="form-control" placeholder="+1 (999) 999 9999" ng-pattern="/^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/" ng-minlength="1" ng-maxlength="15" />
-                 <p ng-show="ContactForm.phonenum.$error.maxlength" class="help-block">Phone Number is too long.</p>
-                 <p ng-show="ContactForm.phonenum.$error.pattern" class="help-block">Phone Number not valid.</p> -->
+          
+
+            <!--<div telephone ng-Model="telephoneNumber" class="form-group"></div>-->
+            <div class="phone-input ">
+                <div class="input-group">
+                    <input type="text" class="form-control" phone-input ng-model="tmpPhone" placeholder="Add phone number">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary btn-success" type="button" ng-click="addPhoneNumber()" ng-disabled="ContactForm.phonenum.$invalid"><span class="glyphicon glyphicon-plus"></span></button>
+                    </span>
+                </div>
             </div>
-            <button type="button" name="addbtn" ng-click="addPhoneNumber()" ng-disabled="ContactForm.phonenum.$invalid " class="btn btn-success btn-sm btn-add-phone"><span class="glyphicon glyphicon-plus"></span> Add Phone</button>
-        </div>
+            <div class="row">
+                <div class="col col-md-3">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"><label>Phones</label></div>
+                        <div class="panel-body">
+                            <p ng-show="data.phoneNumber.length==0">No Phones</p>
+                            <table class="table table-hover" ng-if="data.phoneNumber.length>0">
+                                <tr ng-repeat="phoneNumber in data.phoneNumber" ng-model="data.phoneNumber">
+                                    <td class="col col-lg-8">{{phoneNumber.phoneNum}}</td>
+                                    <td class="col col-lg-2"><a data-ng-click="Delnum(phoneNumber.phoneNumberId)" class="glyphicon glyphicon-remove-circle"></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+            <p ng-show="phoneNumber.length" class="help-block">Lastname is too short.</p>
+            </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary" ng-disabled="ContactForm.$invalid  ">Submit</button>
         </div>

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -21,8 +21,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("List Contacts", "Index", "Contacts", new { area = "" }, null)</li>
-                    <li><a href="/#/NewContact">New Contact</a></li>
+                    @*<li>@Html.ActionLink("List Contacts", "Index", "Contacts", new { area = "" }, null)</li>*@
+                    <li><a href="/#/NewContact">Add <span class="glyphicon glyphicon-plus-sign"></span></a></li>
                     @*<li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>*@
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@

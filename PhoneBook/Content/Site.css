@@ -35,5 +35,15 @@ textarea {
     }
 }
 .phone-input{
-	margin-bottom:8px;
+	margin-bottom:15px;
+    width: 280px;
+}
+
+.input-phone1{
+	
+    width: 246px;
+}
+.input-phone-btn{
+	
+    display:flex;
 }

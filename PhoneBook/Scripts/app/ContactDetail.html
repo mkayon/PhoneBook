@@ -1,5 +1,6 @@
 <br />
 <div ng-controller="ContactDetailController">
+    <h2>Detail:{{data.firstName}} {{data.lastName}}</h2>
     <form name="ContactForm" ng-submit="submitForm()" novalidate>
 
         <!-- FIRSTNAME -->
@@ -25,6 +26,7 @@
         <!-- Phones -->
         <div class="form-group">
             <label>Phones :</label>
+            <p ng-show="data.phoneNumber.length==0">No Phones</p>
             <div ng-repeat="phoneNumbe in data.phoneNumber">
                 <label>{{phoneNumbe.phoneNum}}</label>
             </div>

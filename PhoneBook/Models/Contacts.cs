@@ -11,8 +11,7 @@ namespace PhoneBook.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Contacts
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,9 +24,7 @@ namespace PhoneBook.Models
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Email_Adress { get; set; }
-        [Column(TypeName = "DateTime2")]
         public System.DateTime Create_Date { get; set; }
-        [Column(TypeName = "DateTime2")]
         public Nullable<System.DateTime> Update_Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

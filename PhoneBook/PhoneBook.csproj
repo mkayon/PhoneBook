@@ -330,11 +330,13 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app-controller.js" />
+    <Content Include="Scripts\app\app-directive.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\ContactDetail.html" />
     <Content Include="Scripts\app\ContactList.html" />
     <Content Include="Scripts\app\EditeContact.html" />
     <Content Include="Scripts\app\NewContact.html" />
+    <Content Include="Scripts\app\phoneInput.html" />
     <Content Include="Scripts\bootstrap-formhelpers-phone.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
