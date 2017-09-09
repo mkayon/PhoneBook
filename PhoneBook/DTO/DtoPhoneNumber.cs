@@ -9,6 +9,6 @@ namespace PhoneBook.DTO
     {
         public int PhoneNumberId { get; set; }
         public string PhoneNum { get; set; }
-
+        public int ContactId { get; internal set; }
     }
 }
